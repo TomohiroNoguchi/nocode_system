@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Camera Test</title>
+  <style>
+  canvas, video{
+    border: 1px solid gray;
+  }
+  </style>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-primary mb-2">
+  <a href="#" class="navbar-brand" style="color: #fff">FaceAPIカメラ</a>
+</nav>
+
+<div style="text-align: center">
+  <div>
+    <h5>シャッターを押して、顔を撮影してね</h5>
+    <h5>撮影しなおすときは、リセットを押す</h5>
+    <h5>FaceAPIボタンを押して、顔認識してね</h5>
+    <h5>Mapボタンを押して、地図を表示する</h5>
+  </div>
+
+  <div>
+    <video id="camera" width="600" height="400"></video>
+    <canvas id="picture" width="600" height="400"></canvas>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-primary" id="shutter">シャッター</button>
+    <button type="button" class="btn btn-primary" id="reset">リセット</button>
+  </div>
+  <div style="margin-bottom: 5px"></div>
+  <div>
+    <button type="button" class="btn btn-info" id="faceapi">FaceAPIボタン</button>
+    <button type="button" class="btn btn-success" id="map">Mapボタン</button>
+  </div>
+</div>
+
+<!-- 状況ステータス==>顔情報の表示！ -->
+<div style="text-align:center;margin-top:15px">
+  <div id="info" style="background-color:#ccc"></div>
+</div>
+
+<div style="text-align:center">
+  <div id="info3"></div>
+</div>
+
+<!-- ログ表示 -->
+<div id="log" style="font-size:18px"></div>
+
+
+<audio id="se" preload="auto">
+  <source src="./camera-shutter1.mp3" type="audio/mp3">
+</audio>
+
+<!-- <script>
+window.onload = () => {
+};
+</script> -->
+
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Camera Test</title>
+  <style>
+  canvas, video{
+    border: 1px solid gray;
+  }
+  </style>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-primary mb-2">
+  <a href="#" class="navbar-brand" style="color: #fff">FaceAPIカメラ</a>
+</nav>
+
+
+<h3 style="text-align:center">牛久市中央生涯学習センター</h3>
+
+<!-- <div style="text-align:center">
+  <img id='map' src='./image/10-40.png' style="margin:0 auto;width:75%">
+</div> -->
+
+<div style="text-align:center">
+  <div id="info1"></div>
+</div>
+<div style="margin:0 auto;width:75%">
+  <div id="info2"></div>
+</div>
+
+<button type="button" class="btn btn-primary" style="float:right;margin-right:100px" onclick="location.href='./main.html'">戻る</button>
+
+
+<script>
+// URLを取得
+var url = new URL(window.location.href);
+
+// URLSearchParamsオブジェクトを取得
+var params = url.searchParams;
+age = params.get('age')
+console.log(age);
+
+// 年齢によって描画を変える
+// var elem = document.getElementById("map");
+
+if (age < 40) {
+  console.log("30代まで")
+  $("#info1").html("30代まで: " + age);
+  $("#info2").html( "<img src='./image/10-40.png'>" )
+
+} else if (age >= 40 && age < 70) {
+  console.log("40〜60代まで222")
+  $("#info1").html("40〜60代まで: " + age);
+  $("#info2").html( "<img src='./image/40-60.png'>" )
+
+} else if (age >= 70) {
+  console.log("70代以上")
+  $("#info1").html("70代以上: " + age);
+  $("#info2").html( "<img src='./image/70.png'>" )
+
+} else {
+  console.log("Unknownだよ！")
+  $("#info1").html("Unknownだよ: " + age);
+  $("#info2").html( "<img src='./image/70.png'>" )
+
+}
+
+</script>
+
+
+
+</body>
+</html>
